@@ -1,0 +1,7 @@
+{
+  "scripts": {
+    "start": "http-server"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
