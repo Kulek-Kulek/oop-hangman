@@ -53,13 +53,19 @@ class Game {
             this.currentStep++;
             [...document.querySelectorAll('.step')][this.currentStep].style.opacity = 1;
         }
-
         e.target.disabled = true;
+
+        if (this.currentStep === this.lastStep - 1) {
+            this.losing();
+            this.disableButtons();
+            this.playAgain();
+        }
     }
 
     drawLetters() {
         for (let i = 10; i < 36; i++) {
             const btn = document.createElement('button');
+            btn.classList.add('letters__button');
             const letter = i.toString(36);
             btn.textContent = letter;
             btn.addEventListener('click', (e) => this.letterClicked(letter, e));
@@ -70,6 +76,32 @@ class Game {
     drawQuote() {
         const slogan = this.quote.getContent();
         this.wordWrapper.textContent = slogan;
+        if (!slogan.includes('_')) {
+            this.winning();
+            this.disableButtons();
+            this.playAgain();
+        }
+    }
+
+    winning() {
+        this.wordWrapper.textContent = "CONGRATS. You've won!!!";
+    }
+
+    losing() {
+        this.wordWrapper.textContent = "Cheer up. More luck next time!";
+    }
+
+    disableButtons() {
+        const letterButtons = [...document.querySelectorAll('.letters__button')];
+        letterButtons.forEach(button => button.disabled = true);
+    }
+
+    playAgain() {
+        document.querySelector('.reload').classList.add('reload--active');
+        const playAgainBtn = document.querySelector('.reload__btn');
+        playAgainBtn.addEventListener('click', () => location.reload());
+        const buttons = [...document.querySelectorAll('letters__button')];
+        buttons.forEach(btn => btn.style.cursor = 'auto');
     }
 
     start() {

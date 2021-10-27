@@ -1,8 +1,13 @@
 html {
-    font-size:16px;
-    font-family:sans-serif;
+    font-size: 16px;
+    font-family: sans-serif;
 }
+
 #hangman {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
     width: 800px;
     margin: 30px auto;
 }
@@ -13,6 +18,7 @@ html {
     padding: 30px 20px;
     border: 3px black solid;
     text-align: center;
+    text-transform: uppercase;
 }
 
 #letters {
@@ -27,12 +33,12 @@ html {
 #output {
     display: flex;
     width: 100%;
-    margin-bottom:30px;
+    margin-bottom: 30px;
 }
 
 #output .step {
     width: calc(100% / 8);
-    border-right:3px #fff solid;
+    border-right: 3px #fff solid;
 }
 
 #output .step {
@@ -40,11 +46,31 @@ html {
 }
 
 #output .step img {
-    width:100%;
+    width: 100%;
 }
 
 #category {
-    text-align:center;
+    text-align: center;
     padding: 30px 0px;
-    text-transform:uppercase;
+    text-transform: uppercase;
+}
+
+.reload {
+    display: none;
+    width: 200px;
+    height: 40px;
+    margin-top: 10%;
+}
+
+.reload--active {
+    display: block;
+}
+
+.reload__btn {
+    width: 100%;
+    height: 100%;
+}
+
+button:hover {
+    cursor: pointer;
 }
