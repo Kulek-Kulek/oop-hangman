@@ -5,46 +5,62 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <title>Hangman</title>
 </head>
 
 <body>
-    <section id='hangman'>
-        <div id="output">
-            <div class="step">
-                <img src="images/1.png" alt="">
+    <section class="simple-mode" id='hangman'>
+        <button class="mode__btn">Halloween Mode</button>
+        <div class="mode">
+            <div class="output" id="output">
+                <div class="step__halloween">
+                    <img class='halloween__img' src="" alt="">
+                </div>
+                <div class="step">
+                    <img class='mode__img' src="images/1.png" alt="">
+                </div>
+                <div class="step">
+                    <img class='mode__img' src="images/2.png" alt="">
+                </div>
+                <div class="step">
+                    <img class='mode__img' src="images/3.png" alt="step">
+                </div>
+                <div class="step">
+                    <img class='mode__img' src="images/4.png" alt="step">
+                </div>
+                <div class="step">
+                    <img class='mode__img' src="images/5.png" alt="step">
+                </div>
+                <div class="step">
+                    <img class='mode__img' src="images/6.png" alt="step">
+                </div>
+                <div class="step">
+                    <img class='mode__img' src="images/7.png" alt="step">
+                </div>
+                <div class="step">
+                    <img class='mode__img' src="images/8.png" alt="step">
+                </div>
             </div>
-            <div class="step">
-                <img src="images/2.png" alt="">
+            <div class="mode__game">
+                <div class="word" id='word'></div>
+                <div id='category'></div>
+                <div id='game-over'></div>
+                <div class="letters" id='letters'></div>
+                <div class="reload">
+                    <button class="reload__btn">Play Again<i class="fas fa-cat reload__cat"></i></button>
+
+                </div>
+
             </div>
-            <div class="step">
-                <img src="images/3.png" alt="step">
-            </div>
-            <div class="step">
-                <img src="images/4.png" alt="step">
-            </div>
-            <div class="step">
-                <img src="images/5.png" alt="step">
-            </div>
-            <div class="step">
-                <img src="images/6.png" alt="step">
-            </div>
-            <div class="step">
-                <img src="images/7.png" alt="step">
-            </div>
-            <div class="step">
-                <img src="images/8.png" alt="step">
-            </div>
-        </div>
-        <div id='output'></div>
-        <div id='word'></div>
-        <div id='category'></div>
-        <div id='letters'></div>
-        <div class="reload">
-            <button class="reload__btn">Play Again</button>
         </div>
     </section>
+    <audio class="audio" src="sound/lost.mp3"></audio>
+    <audio class="audio" src="sound/no.mp3"></audio>
+    <audio class="audio" src="sound/yes.mp3"></audio>
+    <audio class="audio" src="sound/wow.mp3"></audio>
     <script src="App/Game.js" type="module"></script>
 </body>
 

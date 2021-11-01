@@ -1,24 +1,65 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 html {
     font-size: 16px;
     font-family: sans-serif;
 }
 
-#hangman {
-    display: flex;
-    flex-direction: column;
+.simple-mode {
+    /* display: flex; */
+    /* flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; */
     width: 800px;
     margin: 30px auto;
 }
 
-#word {
+.hide-show {
+    display: none;
+}
+
+.show-hide {
+    display: block;
+}
+
+.mode__btn {
+    width: 18vw;
+    background-color: #000;
+    color: #fff;
+    letter-spacing: 3px;
+    font-size: 1.2rem;
+    margin: -45%;
+    padding: .5% 0;
+    border: 3px solid rgb(124, 6, 6);
+}
+
+.mode__btn--simple {
+    margin: 1%;
+    background-color: #fff;
+    color: #000;
+    border: 3px solid #000;
+}
+
+.word {
     letter-spacing: 5px;
     font-size: 2rem;
     padding: 30px 20px;
     border: 3px black solid;
     text-align: center;
     text-transform: uppercase;
+}
+
+#game-over {
+    letter-spacing: 5px;
+    font-size: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    color: crimson;
+    font-weight: bold;
 }
 
 #letters {
@@ -28,9 +69,11 @@ html {
 #letters button {
     padding: 10px;
     margin: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
-#output {
+.output {
     display: flex;
     width: 100%;
     margin-bottom: 30px;
@@ -59,7 +102,7 @@ html {
     display: none;
     width: 200px;
     height: 40px;
-    margin-top: 10%;
+    margin-top: 5%;
 }
 
 .reload--active {
@@ -69,8 +112,72 @@ html {
 .reload__btn {
     width: 100%;
     height: 100%;
+    font-size: 20px;
+    background-color: #fff;
+    border: 1px solid black;
+    letter-spacing: 1px;
 }
 
 button:hover {
     cursor: pointer;
+}
+
+.halloween-mode {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+}
+
+.mode--halloween {
+    display: flex;
+    justify-content: space-around;
+    padding: 1.5%;
+}
+
+.output--halloween {
+    width: 50%;
+}
+
+.mode__game--halloween {
+    flex-basis: 50%;
+    color: #fff;
+    margin: 0 1% 0 0;
+}
+
+.word--halloween {
+    border: 3px black #fff;
+}
+
+.step__halloween {
+    display: none;
+}
+
+.letters-halloween {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #fff;
+}
+
+.step__halloween--active {
+    width: 100%;
+    height: 500px;
+    display: block;
+}
+
+.halloween__img {
+    width: 100%;
+    height: 100%;
+}
+
+.reload__cat {
+    display: none;
+    color: crimson;
+    margin-left: 20px;
+    font-size: 1.7rem;
+}
+
+.reload__cat-halloween {
+    display: inline-block;
 }
